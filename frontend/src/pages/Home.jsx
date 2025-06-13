@@ -16,7 +16,6 @@ const Home = () => {
     const username = localStorage.getItem('username');
     const currentPath = location.pathname;
     
-    // Solo redirige si no hay usuario Y no está en login/register
     if (!username && !['/login', '/register'].includes(currentPath)) {
       navigate('/login');
     }
@@ -62,7 +61,7 @@ const Home = () => {
         />
       </Routes>
 
-      {/* Barra de navegación solo cuando hay sesión activa */}
+      {/* Barra de navegación*/}
       {localStorage.getItem('username') && (
         <nav className="fixed bottom-0 left-0 right-0 bg-white shadow-lg border-t z-50">
           <div className="flex justify-around py-2 px-2 w-full">
